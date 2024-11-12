@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+   
+
+    body {
+      font-family: Arial;
+     
+    }
+
+    /* form */
+    .form-inline {
+      width: 83%;
+      margin-top: 10px;
+      margin-left: 60px;
+      display: flex;
+      /* Use flexbox for the container */
+      justify-content: space-between;
+      /* Space out children evenly */
+      align-items: center;
+      /* Center items vertically */
+      padding-left: 10px;
+      /* Add some padding */
+      border: 1px solid #ccc;
+    }
+
+    input[type=text],
+    select {
+      width: 20%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      /* Space out children evenly */
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+
+
+
+    /* Row styling */
+    .row {
+
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    /* Style the search input */
+    .search-container input[type="text"] {
+      padding-left: 30px;
+      /* Add space for the icon */
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Position the search icon inside the input field */
+    .search-container .fa-search {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+
+    /* Input field styling 
+    .form-control {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      
+    }
+
+    /* Checkbox container styling  
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }*/
+
+    /* Checkbox label styling 
+    .checkbox-label {
+      font-weight: normal;
+    }*/
+
+    /* Button styling */
+    .btn {
+      width: 15%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* form end */
+    
+    /* table */
+    .table-wrapper {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 500px; /* You can set the height as per your requirement */
+    white-space: nowrap; /* Prevent table content from wrapping */
+}
+    table {
+      width: auto;
+      border-collapse: collapse;
+      margin: 20px 0;
+      margin-top: 10px;
+      overflow-y: scroll;
+      font-size: small;
+    }
+    
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 6px;
+      margin: 5px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .fa-solid,
+    .fa-regular {
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    /* Optional styling for mobile responsiveness */
+    @media screen and (max-width: 400px) {
+      table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+      }
+
+      th,
+      td {
+        white-space: nowrap;
+      }
+    }
+
+    /*table end */
+  </style>
+
+  <link href="manu.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="menu">
+      <ul>
+        <li><a href=""><i class="fa-solid fa-bars"></i></a></li>
+
+        <li><a href="">Contacts</a></li>
+
+        <li><a href=""><i class="fa-solid fa-user icon"></i> Manthan</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li><a><i class="fa-solid fa-house-chimney icon"></i> Dashboard</a></li>
+        <br>
+        <li><a><i class="fa-solid fa-address-book icon"></i> Contacts</a></li>
+        <br>
+        <li><a><i class="fa-solid fa-user icon"></i> Leads</a></li>
+        <br>
+        <li><a><i class="fa fa-tasks icon" aria-hidden="true"></i> Tasks</a></li>
+        <br>
+        <li><a><i class="fa-solid fa-question icon"></i> FAQ</a></li>
+        <br>
+        <li><a><i class="fa fa-sign-out icon" aria-hidden="true"></i> Logout</a></li>
+      </ul>
+    </div>
+    <div class="contects">
+      <form class="form-inline" action="">
+
+        <label for="Active"></label>
+        <select id="Active">
+          <option value="">Active</option>
+          <option value="">deactive</option>
+        </select>
+
+        <label for="All"></label>
+        <select id="All">
+          <option value="">All</option>
+          <option value="">Images</option>
+          <option value="">No Images</option>
+          <option value="">Images + No Company</option>
+        </select>
+
+
+
+        <div class="search-container">
+          <input type="text" placeholder="Search.." name="search2">
+          <i class="fa fa-search"></i>
+        </div>
+
+        <button type="submit" class="btn btn-default">Export</button>
+        <br>
+        <a href="Addcontacts.html">
+       <button type="submit" class="btn btn-default">Add Contacts</button>
+      </a> 
+      </form>
+      <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>Sr No.</th>
+          <th>Action</th>
+          <br>
+          <th>Lead Count</th>
+          <th>Party name<i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+          <th>Company name<i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+          <th>Mobile No.<i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+          <th>Tag <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+          <th>Refernce <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+          <th>party code <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+          <th>Source <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+          <th>Adderss <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+              placeholder="Search" name="search"></th>
+              <th>GST No. <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+                placeholder="Search" name="search"></th>
+            <th>Email <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+                placeholder="Search" name="search"></th>
+                <th>Website <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+                  placeholder="Search" name="search"></th>
+                  <th>Pincode <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+                    placeholder="Search" name="search"></th>
+                    <th>City <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+                      placeholder="Search" name="search"></th>
+                      <th>State <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+                        placeholder="Search" name="search"></th>
+                    <th>Country <i class="fa-solid fa-up-long"><i class="fa-solid fa-down-long"></i></i><input type="text"
+                        placeholder="Search" name="search"></th>
+                  
+  
+          
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><i class="fa-solid fa-plus"></i><i class="fa-regular fa-pen-to-square"></i> <i
+              class="fa-regular fa-image"></i></td>
+          <td>0</td>
+          <td>Mann patel</td>
+          <td>0</td>
+          <td>919687692222</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><i class="fa-solid fa-plus"></i> <i class="fa-regular fa-pen-to-square"></i> <i
+              class="fa-regular fa-image"></i></td>
+          <td>0</td>
+          <td>TOM CRUSH</td>
+          <td>MISSION IMPOSSIBLE PVT.</td>
+          <td>919316415218</td>
+          <td>AGENT FOR USA</td>
+          <td>DP</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <td>3</td>
+        <td><i class="fa-solid fa-plus"></i><i class="fa-regular fa-pen-to-square"></i> <i
+            class="fa-regular fa-image"></i></td>
+        <td>0</td>
+        <td>MANAN</td>
+        <td>MANAN</td>
+        <td>919687693153</td>
+        <td></td>
+        <td>MANAN</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+
+        <td>4</td>
+        <td><i class="fa-solid fa-plus"></i><i class="fa-regular fa-pen-to-square"></i> <i
+            class="fa-regular fa-image"></i></td>
+        <td>0</td>
+        <td>DHARV Prajapati</td>
+        <td>DRP</td>
+        <td>919687690153</td>
+        <td>SPL</td>
+        <td>Krunal Patel</td>
+        <td>DPFP004</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td><i class="fa-solid fa-plus"></i><i class="fa-regular fa-pen-to-square"></i> <i
+              class="fa-regular fa-image"></i></td>
+          <td>2</td>
+          <td>JALDIP</td>
+          <td>Patel Jaldip</td>
+          <td>918160887560</td>
+          <td></td>
+          <td>Dharv</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <td>6</td>
+        <td><i class="fa-solid fa-plus"></i> <i class="fa-regular fa-pen-to-square"></i> <i
+            class="fa-regular fa-image"></i></td>
+        <td>1</td>
+        <td>Bhautik</td>
+        <td>Bhautik Bhai</td>
+        <td>919067134490</td>
+        <td></td>
+        <td>DHARA STAINLESS STEEL</td>
+        <td></td>
+        </tr>
+        <tr>
+        <tr>
+          <td>7</td>
+          <td><i class="fa-solid fa-plus"></i> <i class="fa-regular fa-pen-to-square"></i> <i
+              class="fa-regular fa-image"></i></td>
+          <td>1</td>
+          <td>Mr. Pankaj TRIPATI With KALIN BHAIAYA</td>
+          <td>PRAJVL ENGITECH</td>
+          <td>917203078825</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><i class="fa-solid fa-plus"></i><i class="fa-regular fa-pen-to-square"></i> <i
+              class="fa-regular fa-image"></i></td>
+          <td>0</td>
+          <td>DHARV Prajapati</td>
+          <td>DRP</td>
+          <td>919687690153</td>
+          <td>SPL</td>
+          <td>Krunal Patel</td>
+          <td>DPFP004</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+
+
+
+</body>
+
+</html>
