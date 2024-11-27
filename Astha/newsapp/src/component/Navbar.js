@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-// import {
-//   Link
-// } from "react-router-dom";
+// import { Link } from 'react-router-dom'
+import {
+  Link
+} from "react-router-dom";
 
 export class Navbar extends Component {
  
@@ -30,13 +30,13 @@ export class Navbar extends Component {
          <li className="nav-item">
           <Link className="nav-link" to="/general">General</Link> </li>
          <li className="nav-item">
-          <Link className="nav-link" to="/herlth">Herlth</Link> </li>
+          <Link className="nav-link" to="/health">health</Link> </li>
          <li className="nav-item">
           <Link className="nav-link" to="/science">Science</Link> </li>
          <li className="nav-item">
           <Link className="nav-link" to="/sports">Sports</Link> </li>
          <li className="nav-item">
-          <Link className="nav-link" to="/techology">Techology</Link> </li>
+          <Link className="nav-link" to="/techology">techology</Link> </li>
           
       </ul>
       {/* <form className="d-flex">
