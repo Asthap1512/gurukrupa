@@ -34,6 +34,7 @@ const News = ({
   };
 
   useEffect(() => {
+    document.title = `${capitalizeFirstLetter(category)} - NewsMonkey`;
     updateNews();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -60,23 +61,22 @@ const News = ({
         hasMore={articles.length < totalResults}
         loader={<Spinner />}
       >
-        <div className="container">
-          <div className="row">
-            {articles.map((element) => (
-              <div className="col-md-4" key={element.url}>
-                <Newsltem
-                  title={element.title || ''}
-                  description={element.description || ''}
-                  imageUrl={element.urlToImage}
-                  newsUrl={element.url}
-                  author={element.author}
-                  date={element.publishedAt}
-                  source={element.source.name}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="row">
+          {articles.map((element, index) => (
+            <div className="col-md-4" key={`${element.url}-${index}`}>
+              <Newsltem
+                title={element.title || ''}
+                description={element.description || ''}
+                imageUrl={element.urlToImage}
+                newsUrl={element.url}
+                author={element.author}
+                date={element.publishedAt}
+                source={element.source.name}
+              />
+            </div>
+          ))}
         </div>
+
       </InfiniteScroll>
     </div>
   );
