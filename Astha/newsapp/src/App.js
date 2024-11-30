@@ -11,7 +11,7 @@ export class App extends Component {
     progress:0
   }
   setProgress = (progress) => {
-    console.log("Progress:", progress); // Debugging to confirm it's working
+   this.setState({progress: progress})// Debugging to confirm it's working
   };
   render() {
     return (
@@ -19,6 +19,7 @@ export class App extends Component {
         <Router>
           <Navbar />
           <LoadingBar
+          height={3}
         color='#f11946'
         progress= {this.state.progress}
         

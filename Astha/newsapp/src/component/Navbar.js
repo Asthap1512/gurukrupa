@@ -35,8 +35,9 @@ export class Navbar extends Component {
           <Link className="nav-link" to="/science">Science</Link> </li>
          <li className="nav-item">
           <Link className="nav-link" to="/sports">Sports</Link> </li>
-         <li className="nav-item">
-          <Link className="nav-link" to="/techology">techology</Link> </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/techology">techology</Link>
+        </li>
           
       </ul>
       {/* <form className="d-flex">

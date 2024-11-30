@@ -25,19 +25,21 @@ export class News extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: [],
-      loading: false,
-      page: 1, // Add a comma here
-      totalResults: 0
+        articles: [],
+        loading: false,
+        page: 1, // Comma added here
+        totalResults: 0
     };
     document.title = `${this.capitalizeFirstLetter(this.props.category)} - NewsMonkey`;
-  }
+}
   async updateNews() {
-    this.props.setProgress(0);
+    this.props.setProgress(10);
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=5dc290efc1b14c8393394ec1ad9affad&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(30);
     let parsedData = await data.json();
+    this.props.setProgress(70);
     this.setState({
       // page: this.state.page - 1,
       articles: parsedData.articles, // Add a comma here
